@@ -5,12 +5,12 @@
 
 .well{
     background-color: #222;
-    color: white;
+    color: #9d9d9d;;
 }
 
 #send{
     background: #222;
-    color: white;
+    color: #9d9d9d;;
 }
 
 #chat{
@@ -41,4 +41,9 @@
     overflow-y: scroll;
     width: 40%;
     margin: 10px;
+}
+
+.chart{
+    width: 30%;
+    height: 400px;
 }

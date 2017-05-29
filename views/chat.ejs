@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="/stylesheets/chat.css">
 
         <div id='messageArea' class='row'>
-            <div class='col-md-4' id="strategy">
+            <div class='col-md-3' id="strategy">
                 <div class='well'>
                     <h3> Prompts</h3>
                     <ul class='list-group'>
@@ -31,16 +31,22 @@
                 </div>
             </div>
             <div class='col-md-3' id="plots">
-                <div class='well'>
-                    <h3> Prompts</h3>
-                    <ul class='list-group'>
-                        <li class="list-item"> Monte-Carlo Simulation: monte (symbol) </li>
-                        <li class="list-item"> Reversion to the mean: rev (universe) </li>
-                        <li class="list-item"> Donchian Breakouts: donch (universe) </li>
-                        <li class="list-item"> Moving Average Crossover: mac (symbol) </li>
-                        <li class="list-item"> Sentiment Analysis: Coming Soon! </li>
-                    </ul>
-                </div>
+                <div class="chart">
+                    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                    <script type="text/javascript">
+                    new TradingView.widget({
+                        "symbol": "INDEX:FTSE",
+                        "interval": "D",
+                        "timezone": "Etc/UTC",
+                        "theme": "White",
+                        "style": "3",
+                        "locale": "en",
+                        "toolbar_bg": "#f1f3f6",
+                        "enable_publishing": false,
+                        "allow_symbol_change": true,
+                        "hideideas": true
+                    });
+                    </script>
             </div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
