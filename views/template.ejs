@@ -1,0 +1,32 @@
+<%# views/template.ejs %>
+ 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>YQ</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Istok+Web" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="my-navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class= "icon-bar"></span>
+                    <span class= "icon-bar"></span>
+                </button>
+                <a href="index.html" class="navbar-brand">Yung Quant</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/strategies"> Strategies</a>
+                        <li><a href="/chat"> Chat</a>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <%- content %>
+    <script src="/js/bootstrap.min.js"></script>

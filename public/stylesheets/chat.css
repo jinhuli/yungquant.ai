@@ -1,0 +1,44 @@
+#messageArea{
+  margin-top: 90px;
+  height: 100vh;
+}
+
+.well{
+    background-color: #222;
+    color: white;
+}
+
+#send{
+    background: #222;
+    color: white;
+}
+
+#chat{
+    width: 40%;
+    align-self: center;
+    height: 100%;
+    overflow-y: scroll;
+    border:1px solid black;
+
+}
+
+#strategy #chat #plots {
+    float: left;
+}
+
+#plots{
+    height: 100vh;
+}
+
+#messageFormDiv{
+    position: fixed;
+    bottom: 0;
+    width: 40%;
+}
+
+#messageBox{
+    height: 70%;
+    overflow-y: scroll;
+    width: 40%;
+    margin: 10px;
+}
