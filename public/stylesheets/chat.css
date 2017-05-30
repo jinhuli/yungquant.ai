@@ -1,49 +1,55 @@
-#messageArea{
-  margin-top: 90px;
-  height: 100vh;
-}
-
-.well{
-    background-color: #222;
-    color: #9d9d9d;;
-}
-
-#send{
-    background: #222;
-    color: #9d9d9d;;
-}
-
-#chat{
-    width: 40%;
-    align-self: center;
-    height: 100%;
-    overflow-y: scroll;
-    border:1px solid black;
-
-}
-
-#strategy #chat #plots {
-    float: left;
-}
-
-#plots{
+#messageArea {
+    margin-top: 90px;
     height: 100vh;
 }
 
-#messageFormDiv{
-    position: fixed;
-    bottom: 0;
-    width: 40%;
+.well {
+    background-color: #222;
+    color: #9d9d9d;
 }
 
-#messageBox{
-    height: 70%;
-    overflow-y: scroll;
+#send {
+    background: #222;
+    color: #9d9d9d;
+}
+
+#chat {
     width: 40%;
+    align-self: center;
+    border: 1px solid black;
+    padding-bottom: 40px;
+    height: 80%;
+
+}
+
+#strategy,
+#plots {
+    overflow-y: scroll;
+    height: 80%;
+}
+
+#messageFormDiv {
+    bottom: 10px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+#messageBox {
+    height: 80%;
+    overflow-y: scroll;
+    width: 100%;
     margin: 10px;
 }
 
-.chart{
-    width: 30%;
-    height: 400px;
+.chart {
+    height: 300px;
+    padding: 20px;
+}
+
+#messageForm {
+    bottom: 10px;
+}
+
+body {
+    overflow: hidden;
 }

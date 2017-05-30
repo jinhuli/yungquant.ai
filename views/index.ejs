@@ -2,7 +2,11 @@
  
 <% extend('template') %>
     <link rel="stylesheet" href="/stylesheets/stockStyles.css">
-
+    <style>
+    .chart{
+        height: 80vh;
+    }
+    </style>
     <div class="jumbotron">
         <div class="container text-center">
             <h1> YungQuant.io </h1>
@@ -14,8 +18,8 @@
         </div>
     </div>
 
-    <div class="containter text-center">
-        <h3 display:inline-block; padding:1em;> <em><q>Finally, a website that gives regular people the tools to grow their investments like the big banks</q> </em>            - Some guy, probably </h3>
+    <div class="containter text-center" style="margin:25px;">
+        <h3 display:inline-block; padding:1em; margin: 15px;> <em><q>Finally, a website that gives regular people the tools to grow their investments like the big banks</q> </em>            - Some guy, probably </h3>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -26,9 +30,8 @@
     <div class="chart">
         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
         <script type="text/javascript">
-        var chWidth = $(document).width();
         new TradingView.widget({
-            "width": chWidth,
+            "autosize": "true",
             "symbol": "INDEX:FTSE",
             "interval": "D",
             "timezone": "Etc/UTC",

@@ -12,6 +12,6 @@ $(function () {
     });
 
     socket.on('new message', function (data) {
-        $messageBox.append("<div class='well'>" + data.msg + "</div>")
+        $messageBox.append("<div class='well' style='width:40%;'>" + data.msg + "</div>")
     })
 });

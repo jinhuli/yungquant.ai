@@ -3,6 +3,8 @@
     <% extend('template') %>
 
         <link rel="stylesheet" href="/stylesheets/chat.css">
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+
 
         <div id='messageArea' class='row'>
             <div class='col-md-3' id="strategy">
@@ -30,12 +32,81 @@
                     </form>
                 </div>
             </div>
-            <div class='col-md-3' id="plots">
-                <div class="chart">
-                    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <div class='col-md-4' id="plots">
+                <h3 style='text-align:center;'> Charts </h3>
+                <div class="chart" style="margin: 0px;">
                     <script type="text/javascript">
                     new TradingView.widget({
-                        "symbol": "INDEX:FTSE",
+                        "autosize": "true",
+                        "symbol": "AAPL",
+                        "interval": "D",
+                        "timezone": "Etc/UTC",
+                        "theme": "White",
+                        "style": "3",
+                        "locale": "en",
+                        "toolbar_bg": "#f1f3f6",
+                        "enable_publishing": false,
+                        "allow_symbol_change": true,
+                        "hideideas": true
+                    });
+                    </script>
+            </div>
+            <div class="chart" style="margin: 0px;">
+                    <script type="text/javascript">
+                    new TradingView.widget({
+                        "autosize": "true",
+                        "symbol": "MSFT",
+                        "interval": "D",
+                        "timezone": "Etc/UTC",
+                        "theme": "White",
+                        "style": "3",
+                        "locale": "en",
+                        "toolbar_bg": "#f1f3f6",
+                        "enable_publishing": false,
+                        "allow_symbol_change": true,
+                        "hideideas": true
+                    });
+                    </script>
+            </div>
+            <div class="chart" style="margin: 0px;">
+                    <script type="text/javascript">
+                    new TradingView.widget({
+                        "autosize": "true",
+                        "symbol": "NVDA",
+                        "interval": "D",
+                        "timezone": "Etc/UTC",
+                        "theme": "White",
+                        "style": "3",
+                        "locale": "en",
+                        "toolbar_bg": "#f1f3f6",
+                        "enable_publishing": false,
+                        "allow_symbol_change": true,
+                        "hideideas": true
+                    });
+                    </script>
+            </div>
+            <div class="chart" style="margin: 0px;">
+                    <script type="text/javascript">
+                    new TradingView.widget({
+                        "autosize": "true",
+                        "symbol": "NFLX",
+                        "interval": "D",
+                        "timezone": "Etc/UTC",
+                        "theme": "White",
+                        "style": "3",
+                        "locale": "en",
+                        "toolbar_bg": "#f1f3f6",
+                        "enable_publishing": false,
+                        "allow_symbol_change": true,
+                        "hideideas": true
+                    });
+                    </script>
+            </div>
+            <div class="chart" style="margin: 0px;">
+                    <script type="text/javascript">
+                    new TradingView.widget({
+                        "autosize": "true",
+                        "symbol": "FB",
                         "interval": "D",
                         "timezone": "Etc/UTC",
                         "theme": "White",
