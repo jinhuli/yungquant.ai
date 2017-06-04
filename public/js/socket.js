@@ -7,11 +7,16 @@ $(function () {
 
     $messageForm.submit(function (e) {
         e.preventDefault();
-        socket.emit('send message', $message.val());
+        socket.emit('send message', {message: $message.val(), sender: "user"});
         $message.val('');
     });
 
     socket.on('new message', function (data) {
-        $messageBox.append("<div class='well' style='width:40%;'>" + data.msg + "</div>")
+        if(data.sender != "yq"){
+            $messageBox.append("<div class='well' id='user' style='width:90%;'>" + data.msg + "</div>");
+        }
+        else{
+            $messageBox.append("<div class='well' id='bot' style='width:90%;'>" + data.msg + "</div>");
+        }
     })
 });

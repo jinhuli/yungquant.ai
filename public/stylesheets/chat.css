@@ -3,7 +3,25 @@
     height: 100vh;
 }
 
-.well {
+#bot {
+    background-color: #222;
+    color: #9d9d9d;
+}
+
+#user{
+    background-color: lightgrey;
+    color: #222;
+    text-align: right;
+    margin-right: 2px;
+}
+
+#bot, #user{
+    margin-bottom: 10px;
+    padding: 4px;
+    min-height: 15px;
+}
+
+#prompts{
     background-color: #222;
     color: #9d9d9d;
 }
