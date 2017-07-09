@@ -14,7 +14,7 @@
                         <li class="list-item"> Monte-Carlo Simulation: monte (symbol) </li>
                         <li class="list-item"> Reversion to the mean: rev (universe) </li>
                         <li class="list-item"> Donchian Breakouts: donch (universe) </li>
-                        <li class="list-item"> Moving Average Crossover: mac (symbol) </li>
+                        <li class="list-item"> Moving Average Crossover: mac (universe) </li>
                         <li class="list-item"> Sentiment Analysis: Coming Soon! </li>
                     </ul>
                 </div>
@@ -24,10 +24,10 @@
                 <div class="container" id="messageFormDiv">
                     <form id='messageForm'>
                         <div class="form-group">
-                            <label>Enter Message</label>
-                            <textarea class='form-control' id='message'></textarea>
-                            <br />
-                            <input type='submit' class='btn btn-primary' value='Send Message' id="send" />
+                            <label for="message">Enter Message</label>
+                            <br/>
+                            <input type="text" id="message" class="form-control" placeholder="Ask away!" style="width:80%; float: left;">
+                            <input type='submit' class='btn btn-primary' value='Send' id="send" style="width: 15%; float: left; background-color: #222; color: white;" />
                         </div>
                     </form>
                 </div>

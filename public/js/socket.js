@@ -13,10 +13,11 @@ $(function () {
 
     socket.on('new message', function (data) {
         if(data.sender != "yq"){
-            $messageBox.append("<div class='well' id='user' style='width:90%;'>" + data.msg + "</div>");
+            $messageBox.append("<div class='well messageBubble' id='user' style='width:90%;'>" + data.msg + "</div>");
         }
         else{
-            $messageBox.append("<div class='well' id='bot' style='width:90%;'>" + data.msg + "</div>");
+            $messageBox.append("<div class='well messageBubble' id='bot' style='width:90%;'>" + data.msg + "</div>");
         }
+        $("#messageBox").animate({ scrollTop: $('#messageBox').prop("scrollHeight")}, 1000);
     })
 });

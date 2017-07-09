@@ -9,7 +9,7 @@
 }
 
 #user{
-    background-color: lightgrey;
+    background-color: #F8F8F8;
     color: #222;
     text-align: right;
     margin-right: 2px;
@@ -35,7 +35,7 @@
     width: 40%;
     align-self: center;
     border: 1px solid black;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
     height: 80%;
 
 }
@@ -47,9 +47,8 @@
 }
 
 #messageFormDiv {
-    bottom: 10px;
+    bottom: 0px;
     width: 100%;
-    margin-bottom: 40px;
 }
 
 #messageBox {
@@ -70,4 +69,9 @@
 
 body {
     overflow: hidden;
+}
+
+.messageBubble{
+    border-radius: 15px;
+    padding: 15px;
 }

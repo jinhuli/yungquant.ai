@@ -1,0 +1,16 @@
+.btn{
+    background-color: #222;
+    border-color: #222;
+    color: white;
+
+}
+
+.thumbnail{
+    border-color: #222;
+
+}
+
+#img{
+    height: 200px;
+    width: 250px;
+}
