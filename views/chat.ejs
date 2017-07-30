@@ -4,7 +4,11 @@
 
         <link rel="stylesheet" href="/stylesheets/chat.css">
         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-
+        <style>
+        body{
+            margin-left: 20px;
+        }
+        </style>
 
         <div id='messageArea' class='row'>
             <div class='col-md-3' id="strategy">
@@ -13,13 +17,23 @@
                     <ul class='list-group'>
                         <li class="list-item"> Monte-Carlo Simulation: monte (symbol) </li>
                         <li class="list-item"> Reversion to the mean: rev (universe) </li>
-                        <li class="list-item"> Donchian Breakouts: donch (universe) </li>
+                        <li class="list-item"> Channel Breakouts: breakout (universe) </li>
+                        <li class="list-item"> Basic Momentum: momentum (universe) </li>
                         <li class="list-item"> Moving Average Crossover: mac (universe) </li>
                         <li class="list-item"> Sentiment Analysis: Coming Soon! </li>
                     </ul>
                 </div>
+                <div class='well' id="prompts">
+                    <h3> Universes</h3>
+                    <ul class='list-group'>
+                        <li class="list-item"> S&P 100: sp100 </li>
+                        <li class="list-item"> NASDAQ 100: nas100 </li>
+                        <li class="list-item"> SPDR ETFs: spdr </li>
+                        <li class="list-item"> Yung Quant Tech: yqtech </li>
+                    </ul>
+                </div>
             </div>
-            <div class='col-md-6' id="chat">
+            <div class='col-md-5' id="chat">
                 <div class='container' id='messageBox'></div>
                 <div class="container" id="messageFormDiv">
                     <form id='messageForm'>
@@ -32,8 +46,7 @@
                     </form>
                 </div>
             </div>
-            <div class='col-md-4' id="plots">
-                <h3 style='text-align:center;'> Charts </h3>
+            <div class='col-md-3' id="plots">
                 <div class="chart" style="margin: 0px;">
                     <script type="text/javascript">
                     new TradingView.widget({

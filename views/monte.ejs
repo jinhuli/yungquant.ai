@@ -1,0 +1,109 @@
+<%# views/monte.ejs %>
+
+    <% extend('template') %>
+   <style>
+    body{
+        margin-top: 60px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    #content{
+        width: 100%;
+    }
+    .row{
+        margin: auto;
+    }
+    h3, h4{
+        text-align: center;
+    }
+
+    #return{
+        margin: auto;
+        justify-content: center;
+        width: 60%;
+    }
+    #title{
+        text-align: center;
+    }
+    .caption{
+        text-align: center;
+    }
+    .thumbnail{
+        border-color: #222;
+    }
+
+    </style>
+
+    
+    <div class="container" style="width:60%;" id="title">
+        <h1>Monte Carlo Simulations</h1>
+    <h4>Article by investopedia.com </h4>
+    <p>Original article and image courtesy of: <a href="http://www.investopedia.com/terms/m/montecarlosimulation.asp">investopedia.com</a></p>
+    </div>
+    <div class="container" id="content">
+        <div id='Terminology' class='row'>
+            <h3>The Terminology</h3>
+            <div class="col-sm-6">
+                <div class="thumbnail">
+                    <h4>Normal Distribution</h4>
+                    <div class="caption">
+                        A useful probability distribution used to model expected outcomes of an event. For our purposes we will be modeling the price of a stock with a normal distribution, or in other words, the price of a stock in this scenario can be considered a normally distributed random variable. A normal distribution is sometimes reffered to as a bell curve because of the shape of it's density function.
+                    </div>
+                </div>
+            </div>
+           <div class="col-sm-6">
+                <div class="thumbnail">
+                    <h4>Probability Density Function</h4>
+                    <div class="caption">
+                        A function whose value at any given possible outcome in the data gives the relative likelihood that that outcome will occur.
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="thumbnail">
+                    <h4>Expected Value</h4>
+                    <div class="caption">
+                        The outcome of an event with the highest probability is said to be <strong>expected</strong>.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <h3>The Strategy</h3>
+            <div class="col-sm-12">
+                <div class="thumbnail">
+                    <h4>This is not a strategy</h4>
+                    <div class="caption">
+                        Monte carlo simulations provide a means of estimating the future price of a stock, but I would hesitant
+                         to use it as the only 'Buy' or 'Sell' signal in my strategy. This is because we cannot achieve repeatable
+                         backtests of an exclusive monte carlo strategy due to the random nature of how future prices are predicted 
+                         (see original article for more). Instead, monte carlo can be used as a filter: for example screening for 
+                         stocks using the Mean Reversion strategy, then running a monte carlo simulation on the 'Buy' 
+                         stocks could help strengthen your signal (take only the ones with an expected upward trend). Unfortunately 
+                         I am unable to support this claim with backtested results, and as such you should be cautious as always when
+                         implementing a trading strategy using monte carlo simulations.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h3>The Output</h3>
+            <div class="thumbnail" id="return">
+            <img src="/img/montecarlo.png" width="400" height="400" id="img"><img src="/img/monte_expected.png" width="400" height="400" id="img">
+                <div class="caption">
+                    The image on the top displays all of the simulations ran on an asset and the image on the bottom shows the highest probability
+                    60 day forecast. The image on the bottom is what will be displayed when you request a monte carlo simulation on the chat page.
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <h3>How to Use It</h3>
+            <div class="thumbnail">
+                <div class="caption">
+                    Head over to the 'Chat' page and send 'monte symbol' to the Yung Quant investment bot (symbol can be any stock supported by google finance) for example 'monte aapl'.
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,103 @@
+<%# views/reversion.ejs %>
+
+    <% extend('template') %>
+   <style>
+    body{
+        margin-top: 60px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    #content{
+        width: 100%;
+    }
+    .row{
+        margin: auto;
+    }
+    h3, h4{
+        text-align: center;
+    }
+
+    #return{
+        margin: auto;
+        justify-content: center;
+        width: 60%;
+    }
+    #title{
+        text-align: center;
+    }
+    .caption{
+        text-align: center;
+    }
+    .thumbnail{
+        border-color: #222;
+    }
+
+    </style>
+
+    
+    <div class="container" style="width:60%;" id="title">
+        <h1>Reversion to the Mean</h1>
+    <h4>Article by Cesar Alvarez, alvarezquanttrading.com</h4>
+    <p>Original article and image courtesy of: <a href="http://alvarezquanttrading.com/2016/02/10/double-7s-strategy/">alvarezquanttrading.com</a></p>
+    </div>
+    <div class="container" id="content">
+        <div id='Terminology' class='row'>
+            <h3>The Terminology</h3>
+            <div class="col-sm-6">
+                <div class="thumbnail">
+                    <h4>Simple Moving Average (SMA)</h4>
+                    <div class="caption">
+                        The sum of the last X days divided by X days. This is just the average, but it's called a moving average because for development purposes it's calculated everyday of a stock's history in order to simulate a strategy's performance as a means of evaluating said strategy.
+                    </div>
+                </div>
+            </div>
+           <div class="col-sm-6">
+                <div class="thumbnail">
+                    <h4>Trading Year</h4>
+                    <div class="caption">
+                        One Trading Year is 252 days.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <h3>The Strategy</h3>
+            <div class="col-sm-6">
+                <div class="thumbnail">
+                    <h4>Buy</h4>
+                    <div class="caption">
+                        <li>The close of the S&P500 is above it's 200 day SMA</li>
+                        <li>The close of a stock is a 7 day low of closes</li>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="thumbnail">
+                    <h4>Sell</h4>
+                    <div class="caption">
+                        The close of a stock is a 7 day high of closes.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h3>The Return</h3>
+            <div class="thumbnail" id="return">
+            <img src="/img/rev_return.png" width="400" height="400" id="img"> 
+                <div class="caption">
+                    This strategy was simulated from 2006 to 2015 and the annualized return was found to be 8.74%. By the Rule of 72, this translates to your money doubling itself every ~eight years.
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <h3>How to Use It</h3>
+            <div class="thumbnail">
+                <div class="caption">
+                    For this strategy you evaluate your holdings each day.</br>
+                    Head over to the 'Chat' page and send 'rev sp100' to the Yung Quant investment bot to find out today's picks.
+                </div>
+            </div>
+        </div>
+    </div>

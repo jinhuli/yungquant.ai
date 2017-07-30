@@ -26,8 +26,15 @@ $(function () {
             }
         }
         else{  
-            if(data.id == id){ 
-                $messageBox.append("<div class='well messageBubble' id='bot' style='width:90%;'>" + data.msg + "</div>");
+            if(data.id == id){
+                if(data.monte === undefined){
+                    $messageBox.append("<div class='well messageBubble' id='bot' style='width:90%;'>" + data.msg + "</div>");
+                } 
+                else{
+                    img = data.msg.replace('b\'','');
+                    img = img.replace('\'','');
+                    $messageBox.append("<div class='well messageBubble' id='bot' style='width:90%;'><img src='data:image/png;base64," + img + "' style='width:75%; height:75%; align-content: center; margin:auto; display:block;'></div>");
+                }
             }
         }
         $("#messageBox").animate({ scrollTop: $('#messageBox').prop("scrollHeight")}, 1000);

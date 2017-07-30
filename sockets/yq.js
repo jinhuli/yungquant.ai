@@ -28,37 +28,51 @@ var chat = function(io) {
             }
             if(data.message == "Help" || data.message == "help" || data.message == "Help me" || data.message == "help me"){
                 io.sockets.emit('forUser', {msg: "First, make sure you've had a look at the Strategies page and know which strategy you're interested in. Once you've done that, find your strategy under the prompts heading to my left and send me a message with your strategy prompt with the universe that you're interested in trading", sender: "yq", id: data.id});
-                io.sockets.emit('forUser', {msg: "Here's and example: 'rev spdr' This will screen for stocks from the spdr ETFs using the mean reversion strategy", sender: "yq", id: data.id});
+                io.sockets.emit('forUser', {msg: "Here's and example: 'mac spdr' This will screen for stocks from the spdr ETFs using the moving average crossover strategy", sender: "yq", id: data.id});
                 var helpOptions = {
-                    args: "rev spdr",
+                    args: "mac spdr",
                     pythonPath: "python3"
                 }
-                PythonShell.run('/python/controller.py', helpOptions, function(err, res){
+                PythonShell.run('/python/screener.py', helpOptions, function(err, res){
                     if(err) io.sockets.emit('forUser', {msg: 'Sorry! Something weird happened, could you send that again please? If the issue persists, please contact shane.kennedy19@gmail.com', sender: "yq", id: data.id});;
-                    console.log(res);
                     io.sockets.emit('forUser', {msg: res[0], sender: "yq", id: data.id});
                     io.sockets.emit('forUser', {msg: res[1], sender: "yq", id: data.id});
-                    io.sockets.emit('forUser', {msg: "As you can guess, those are the stocks that you would buy and sell using the mean reversion strategy. If you want to see the stock chart for any of those, look at the charts to my right and type in the symbol you want to see in the top left text box of any of those charts", sender: "yq", id: data.id});
+                    io.sockets.emit('forUser', {msg: "As you can guess, those are the stocks that you would buy and sell using the moving average crossover strategy. If you want to see the stock chart for any of those, look at the charts to my right and type in the symbol you want to see in the top left text box of any of those charts", sender: "yq", id: data.id});
                     io.sockets.emit('forUser', {msg: "Hope that helps! Happy investing", sender: "yq", id: data.id});
                     return;
                 });    
             }
             else{
+                io.sockets.emit('forUser', {msg: "This could take up to 15 seconds...", sender: "yq", id: data.id});
                 var options = {
                     args: data.message,
                     pythonPath: "python3"
                 }
-                PythonShell.run('/python/controller.py', options, function(err, res){
-                    if(err) io.sockets.emit('forUser', {msg: 'Sorry! Something weird happened, could you send that again please? If the issue persists, please contact shane.kennedy19@gmail.com', sender: "yq", id: data.id});
-                    console.log(res);
-                    if(res==null){
-                        io.sockets.emit('forUser', {msg: 'Sorry! Make sure you\'ve given a proper prompt and universe!', sender: "yq", id: data.id});
-                    }
-                    else{
-                        io.sockets.emit('forUser', {msg: res[0], sender: "yq", id: data.id});
-                        io.sockets.emit('forUser', {msg: res[1], sender: "yq", id: data.id});
-                    }
-                });
+                if(data.message.split(' ')[0] == 'monte'){
+                    PythonShell.run('/python/monte.py', options, function(err, res){
+                        if(err) io.sockets.emit('forUser', {msg: 'Sorry! Something weird happened, could you send that again please? If the issue persists, please contact shane.kennedy19@gmail.com', sender: "yq", id: data.id});
+                        if(res==null){
+                            io.sockets.emit('forUser', {msg: 'Sorry! Make sure you\'ve given a proper prompt and universe!', sender: "yq", id: data.id});
+                        }
+                        else{
+                            io.sockets.emit('forUser', {msg: 'Here is the highest probability outcome from 100 Monte Carlo Simulations:', sender: 'yq', id: data.id});
+                            io.sockets.emit('forUser', {msg: res[0], sender: "yq", id: data.id, monte: 1});
+                        }
+                    });
+                }
+                else{
+                    PythonShell.run('/python/screener.py', options, function(err, res){
+                        if(err) io.sockets.emit('forUser', {msg: 'Sorry! Something weird happened, could you send that again please? If the issue persists, please contact shane.kennedy19@gmail.com', sender: "yq", id: data.id});
+                        if(res==null){
+                            io.sockets.emit('forUser', {msg: 'Sorry! Make sure you\'ve given a proper prompt and universe!', sender: "yq", id: data.id});
+                        }
+                        else{
+                            io.sockets.emit('forUser', {msg: res[0], sender: "yq", id: data.id});
+                            io.sockets.emit('forUser', {msg: res[1], sender: "yq", id: data.id});
+                        }
+                    });
+                }
+                
             }
         });
     });

@@ -1,0 +1,102 @@
+<%# views/mac.ejs %>
+
+    <% extend('template') %>
+   <style>
+    body{
+        margin-top: 60px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    #content{
+        width: 100%;
+    }
+    .row{
+        margin: auto;
+    }
+    h3, h4{
+        text-align: center;
+    }
+
+    #return{
+        margin: auto;
+        justify-content: center;
+        width: 60%;
+    }
+    #title{
+        text-align: center;
+    }
+    .caption{
+        text-align: center;
+    }
+    .thumbnail{
+        border-color: #222;
+    }
+
+    </style>
+
+    
+    <div class="container" style="width:60%;" id="title">
+        <h1>Moving Average Crossover</h1>
+        <h4>Article by Meb Faber, Chief Investment Officer at Cambria Investment Management</h4>
+        <p>Original article and image courtesy of: <a href="http://mebfaber.com/2015/06/16/three-way-model/">mebfaber.com</a></p>
+    </div>
+    <div class="container" id="content">
+        <div id='Terminology' class='row'>
+            <h3>The Terminology</h3>
+            <div class="col-sm-6">
+                <div class="thumbnail">
+                    <h4>Simple Moving Average (SMA)</h4>
+                    <div class="caption">
+                        The sum of the last X days divided by X days. This is just the average, but it's called a moving average because for development purposes it's calculated everyday of a stock's history in order to simulate a strategy's performance as a means of evaluating said strategy.
+                    </div>
+                </div>
+            </div>
+           <div class="col-sm-6">
+                <div class="thumbnail">
+                    <h4>Trading Year</h4>
+                    <div class="caption">
+                        One Trading Year is 252 days.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <h3>The Strategy</h3>
+            <div class="col-sm-6">
+                <div class="thumbnail">
+                    <h4>Buy</h4>
+                    <div class="caption">
+                        When the 3 month SMA is above the 10 month SMA of a given stock.
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="thumbnail">
+                    <h4>Sell</h4>
+                    <div class="caption">
+                        When the 3 month SMA is below the 10 month SMA of a given stock.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h3>The Return</h3>
+            <div class="thumbnail" id="return">
+            <img src="/img/mac_return.png" width="400" height="400" id="img"> 
+                <div class="caption">
+                    This strategy was simulated from 1971 to 2015 and the annualized return was found to be 13.12%. By the Rule of 72, this translates to your money doubling itself every five and a half years
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <h3>How to Use It</h3>
+            <div class="thumbnail">
+                <div class="caption">
+                    For this strategy you evaluate your holdings once each month.</br>
+                    Head over to the 'Chat' page and send 'mac sp100' to the Yung Quant investment bot to find out your monthly picks.
+                </div>
+            </div>
+        </div>
+    </div>

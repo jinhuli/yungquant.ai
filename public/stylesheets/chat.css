@@ -24,6 +24,8 @@
 #prompts{
     background-color: #222;
     color: #9d9d9d;
+    padding: 25px;
+    text-align: center;
 }
 
 #send {
@@ -32,11 +34,13 @@
 }
 
 #chat {
-    width: 40%;
     align-self: center;
     border: 1px solid black;
     padding-bottom: 20px;
     height: 80%;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
     border-radius: 20px;
 
 }
@@ -68,9 +72,6 @@
     bottom: 10px;
 }
 
-body {
-    overflow: hidden;
-}
 
 .messageBubble{
     border-radius: 15px;

@@ -1,0 +1,103 @@
+<%# views/breakout.ejs %>
+
+    <% extend('template') %>
+
+    <style>
+    body{
+        margin-top: 60px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    #content{
+        width: 100%;
+    }
+    .row{
+        margin: auto;
+    }
+    h3, h4{
+        text-align: center;
+    }
+
+    #return{
+        margin: auto;
+        justify-content: center;
+        width: 60%;
+    }
+    #title{
+        text-align: center;
+    }
+    .caption{
+        text-align: center;
+    }
+    .thumbnail{
+        border-color: #222;
+    }
+
+    </style>
+
+    
+    <div class="container" style="width:60%;" id="title">
+        <h1>Channel Breakouts</h1>
+        <h4>Article by Nigol Koulajian and Paul Czkwianianc, founder and Head of Research at Quest Partners LLC, respectively</h4>
+        <p>Original article and image courtesy of: <a href="http://www.questpartnersllc.com/download.php?name=QuestResearchNotes-TrendFollowingSep2010.pdf&file=./perf-files/QuestResearchNotes-TrendFollowingSep2010.pdf">Quest Partners LLC</a></p>
+    </div>
+    <div class="container" id="content">
+        <div id='Terminology' class='row'>
+            <h3>The Terminology</h3>
+            <div class="col-sm-6">
+                <div class="thumbnail">
+                    <h4>The Rule of 72</h4>
+                    <div class="caption">
+                        A shortcut to estimate the number of years required to double your money at a given annual rate of return. The rule states that you divide the rate, expressed as a percentage, into 72.
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="thumbnail">
+                    <h4>Channel Breakout</h4>
+                    <div class="caption">
+                        When the closing price of an equity is the highest in a given look back period, it is said to be "breaking out". Ex: if AAPL shares close at the highest they've been in the last 50 days, this would be a 50 day channel breakout.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <h3>The Strategy</h3>
+            <div class="col-sm-6">
+                <div class="thumbnail">
+                    <h4>Buy</h4>
+                    <div class="caption">
+                        When today's close of a given stock is the highest in the last 50 days.
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="thumbnail">
+                    <h4>Sell</h4>
+                    <div class="caption">
+                        When today's close of a given stock is the lowest in the last 50 days.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h3>The Return</h3>
+            <div class="thumbnail" id="return">
+            <img src="/img/breakout_return.jpeg" width="400" height="400" id="img"> 
+                <div class="caption">
+                    This strategy was simulated from 1990 to 2010 and the annualized return was found to be 9.5%. By the Rule of 72, this translates to your money doubling itself every ~7.5 years.
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <h3>How to Use It</h3>
+            <div class="thumbnail">
+                <div class="caption">
+                    For this strategy you evaluate your holdings each day.</br>
+                    Head over to the 'Chat' page and send 'breakout sp100' to the Yung Quant investment bot to find out your monthly picks.
+                </div>
+            </div>
+        </div>
+    </div>

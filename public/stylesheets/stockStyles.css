@@ -1,6 +1,5 @@
         .containerST {
-        	background: #ECECEC none;
-        	border: 1px solid #D5D4D4;
+        	background: #222;
         	height: 30px;
         	margin: 0 auto;
         	width: 928px;
@@ -25,7 +24,7 @@
         div.stockTicker span.quote {
         	margin: 0;
         	font-weight: bold;
-        	color: #000;
+        	color:white;
         	padding: 0 5px 0 10px;
         }
 
