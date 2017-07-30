@@ -3,6 +3,8 @@ import numpy as np
 from io import BytesIO
 import base64
 import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use('Agg')
 import random
 from scipy.stats import norm
 import sys
