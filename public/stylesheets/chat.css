@@ -1,5 +1,5 @@
 #messageArea {
-    margin-top: 90px;
+    margin-top: 15px;
     height: 100vh;
 }
 
@@ -35,9 +35,9 @@
 
 #chat {
     align-self: center;
-    border: 1px solid black;
+    border: 1px solid white;
     padding-bottom: 20px;
-    height: 80%;
+    height: 70%;
     margin-bottom: 20px;
     margin-left: 20px;
     margin-right: 20px;
@@ -45,8 +45,7 @@
 
 }
 
-#strategy,
-#plots {
+#strategy{
     overflow-y: scroll;
     height: 80%;
 }
@@ -64,8 +63,10 @@
 }
 
 .chart {
-    height: 300px;
-    padding: 20px;
+    width: 33%;
+    margin: 10px;
+    margin: auto;
+    display: inline-block;    
 }
 
 #messageForm {
@@ -76,4 +77,14 @@
 .messageBubble{
     border-radius: 15px;
     padding: 15px;
+}
+
+#chartRow{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    max-height: 150px;
+    margin-top: 55px;
+    margin-bottom: 10px;
+    width: 100%;
+    position: relative;
 }

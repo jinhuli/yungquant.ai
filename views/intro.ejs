@@ -1,0 +1,42 @@
+<%# views/intro.ejs %>
+
+    <% extend('template') %>
+    <style>
+        #intro{
+            margin-top: 50px;
+            width: 70%;
+        }
+        a{
+            color: lightskyblue;
+        }
+    </style>
+    <div class="container" id="intro">
+        <h3>Hello, and welcome to Yung Quant.</h3><h4>Where the desire to become wealthy isn't reserved for those who already are.</h4></br>
+        <h4>What is Yung Quant?</h4>
+        <p>Yung Quant is your personal quantitative analyst and developer. Here you can find out which stocks to buy, which to sell and lots in between... all based on quantitative principles.</p>
+
+            Algorithmic or "quant" trading refers to investing using a well defined set of rules. In most cases, including this website,
+             it refers to an investment strategy that only takes into consideration the price of an equity (such as a stock), parameters
+             that are based on the price of an equity, or parameters to do with the trading of a stock (ex. number of shares of a stock traded that day). 
+             Algorithmic trading offers a backtest-able, non-human approach to investing. What I mean by "backtest-able" is that if we define a set of 
+             rules based only on the quantitative factors mentioned above, we can simulate the strategy on past data and see the results... and I know what 
+             you're thinking, just because it worked in the past doesn't mean it will work in the future. Of course not, but what else do you have?
+        </p></br>
+        <h4>So here's how this thing works</h4><p>Head over to the <a href="/strategy">Strategy</a> page, read through the articles and find a strategy that makes 
+        sense to you. Each strategy found on this website is sourced from a reputable body ranging from hedge fund managers to former traders and they all
+        provide their backtested results for a given strategy. Often times these sources are dry and meant for people familiar with the terminology so I've
+        stripped them down to the bare essentials, and defined the terms necessary to understand the strategy. 
+         Then work your way to the <a href="/chat">Chat</a> page. Here you will find a conversation window where you ask the Yung Quant bot
+        which stocks your strategy picked today using a prompt based on the strategy you've chosen. Once Yung Quant tells you your picks it's up to you to follow through
+         and purchase or sell those stocks using the brokerage of your choice.
+        </p></br>
+        <h4>What you need to know about this website</h4>
+        <li>This website is 100% free and will remain that way, no exceptions.</li>
+        <li>This website uses google finance as its data source which was supposed to be depricated many 
+            years ago and as such it could seize to exist any day. If google finance goes, so does Yung Quant. </li>
+        <li>Google finance is an incomplete data source. Not all stocks are maintained and therefore Yung Quant cannot provide analysis for them.</li>
+        <li>You should always consult a professional before investing.
+    </div></br><br>
+    <div class="container" style="width: 50%;">
+        <footer>This website was built entirely by Shane Kennedy. Contact for questions and suggestions: Email: shane.kennedy19@gmail.com <a target="_blank" href="https://www.linkedin.com/in/shane-kennedy-087b77130/">LinkedIn: Shane Kennedy</a>, <a target="_blank" href="https://twitter.com/yung_quant">Twitter: Yung Quant</a>, <a href="https://github.com/Yung-Quant" target="_blank">Github: Yung Quant</a></footer>
+    </div>

@@ -1,0 +1,29 @@
+<%# views/chat.ejs %>
+
+    <% extend('template') %>
+
+        <link rel="stylesheet" href="/stylesheets/chat.css">
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+        <style>
+        body{
+            margin-left: 20px;
+        }
+        </style>  
+        <div class="row">      
+            <div class='col-md-8' id="chat">
+                <div class='container' id='messageBox'></div>
+                <div class="container" id="messageFormDiv">
+                    <form id='messageForm'>
+                        <div class="form-group">
+                            <label for="message" style="color:white;">Enter Message</label>
+                            <br/>
+                            <input type="text" id="message" class="form-control" placeholder="Ask away!" style="width:80%; float: left;">
+                            <input type='submit' class='btn btn-primary' value='Send' id="send" style="width: 15%; float: left; background-color: #222; color: white; border-color:white;" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="/js/socket.js"></script>
+        <script src='/socket.io/socket.io.js'> </script>

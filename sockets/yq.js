@@ -11,6 +11,8 @@ var chat = function(io) {
         //initial message
         socket.on('page ready', function(data){
             io.sockets.emit('forUser', {msg: "Welcome to Yung Quant, your personal quantitative developer and analyst. If you're a regular, you know what to do. If you're a newbie ask for help!", sender: "yq", id: data.id});
+            io.sockets.emit('forUser', {msg: "If you're on a mobile device you can see the prompts and universes by sending 'prompts' or 'universes'", sender: "yq", id: data.id});
+        
         });
 
 
@@ -26,7 +28,7 @@ var chat = function(io) {
             if(data.message == "Hi" || data.message == "hi" || data.message == "hey" || data.message == "Hey"){
                 io.sockets.emit('forUser', {msg: "Hi! Let's make some money \\m/", sender: "yq", id: data.id}); return;
             }
-            if(data.message == "Help" || data.message == "help" || data.message == "Help me" || data.message == "help me"){
+            else if(data.message == "Help" || data.message == "help" || data.message == "Help me" || data.message == "help me"){
                 io.sockets.emit('forUser', {msg: "First, make sure you've had a look at the Strategies page and know which strategy you're interested in. Once you've done that, find your strategy under the prompts heading to my left and send me a message with your strategy prompt with the universe that you're interested in trading", sender: "yq", id: data.id});
                 io.sockets.emit('forUser', {msg: "Here's and example: 'mac spdr' This will screen for stocks from the spdr ETFs using the moving average crossover strategy", sender: "yq", id: data.id});
                 var helpOptions = {
@@ -41,6 +43,21 @@ var chat = function(io) {
                     io.sockets.emit('forUser', {msg: "Hope that helps! Happy investing", sender: "yq", id: data.id});
                     return;
                 });    
+            }
+            else if(data.message == "prompts" || data.message == "Prompts"){
+                var prompts = "<li class='list-item'> Monte-Carlo Simulation: monte (symbol) </li>\
+                        <li class='list-item'> Reversion to the mean: rev (universe) </li>\
+                        <li class='list-item'> Channel Breakouts: breakout (universe) </li>\
+                        <li class='list-item'> Basic Momentum: momentum (universe) </li>\
+                        <li class='list-item'> Moving Average Crossover: mac (universe) </li>\
+                        <li class='list-item'> Sentiment Analysis: Coming Soon! </li>";
+                io.sockets.emit('forUser', {msg: prompts, sender: "yq", id: data.id});
+            }
+            else if(data.message == "universes" || data.message == "Universes"){
+                var universes = "<li class='list-item'> S&P 100: sp100 </li>\
+                        <li class='list-item'> NASDAQ 100: nas100 </li>\
+                        <li class='list-item'> SPDR ETFs: spdr </li>";
+                io.sockets.emit('forUser', {msg: universes, sender: "yq", id: data.id});
             }
             else{
                 io.sockets.emit('forUser', {msg: "This could take up to 15 seconds...", sender: "yq", id: data.id});

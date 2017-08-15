@@ -9,6 +9,70 @@
             margin-left: 20px;
         }
         </style>
+        <div class="row" id="chartRow">
+            <div class="container" style="overflow-x: inherit; max-height: 200px;">
+                <div class="chart container">
+                    <script type="text/javascript">
+                    chartWidth = ($(document).width())/5
+                    console.log(chartWidth);
+                    new TradingView.widget({
+                        "symbol": "SPY",
+                        "width": chartWidth,
+                        "height": "auto",
+                        "interval": "D",
+                        "timezone": "Etc/UTC",
+                        "theme": "Black",
+                        "style": "3",
+                        "locale": "en",
+                        "toolbar_bg": "rgba(34, 34, 34, 1)",
+                        "enable_publishing": false,
+                        "hide_top_toolbar": true,
+                        "allow_symbol_change": true,
+                        "hideideas": true
+                    });
+                    </script>
+                </div>
+                <div class="chart container">
+                    <script type="text/javascript">
+                    new TradingView.widget({
+                        "symbol": "NDAQ",
+                        "width": chartWidth,
+                        "height": "auto",
+                        "interval": "D",
+                        "timezone": "Etc/UTC",
+                        "theme": "Black",
+                        "style": "3",
+                        "locale": "en",
+                        "toolbar_bg": "rgba(34, 34, 34, 1)",
+                        "enable_publishing": false,
+                        "hide_top_toolbar": true,
+                        "allow_symbol_change": true,
+                        "hideideas": true
+                    });
+                    </script>
+                </div>
+                <div class="chart container">
+                    <script type="text/javascript">
+                    new TradingView.widget({
+                        "symbol": "DJI",
+                        "width": chartWidth,
+                        "height": "auto",
+                        "interval": "D",
+                        "timezone": "Etc/UTC",
+                        "theme": "Black",
+                        "style": "3",
+                        "locale": "en",
+                        "toolbar_bg": "rgba(34, 34, 34, 1)",
+                        "enable_publishing": false,
+                        "hide_top_toolbar": true,
+                        "allow_symbol_change": true,
+                        "hideideas": true
+                    });
+                    </script>
+                </div>
+            </div>
+        </div>
+
 
         <div id='messageArea' class='row'>
             <div class='col-md-3' id="strategy">
@@ -29,108 +93,21 @@
                         <li class="list-item"> S&P 100: sp100 </li>
                         <li class="list-item"> NASDAQ 100: nas100 </li>
                         <li class="list-item"> SPDR ETFs: spdr </li>
-                        <li class="list-item"> Yung Quant Tech: yqtech </li>
                     </ul>
                 </div>
             </div>
-            <div class='col-md-5' id="chat">
+            <div class='col-md-8' id="chat">
                 <div class='container' id='messageBox'></div>
                 <div class="container" id="messageFormDiv">
                     <form id='messageForm'>
                         <div class="form-group">
-                            <label for="message">Enter Message</label>
+                            <label for="message" style="color:white;">Enter Message</label>
                             <br/>
                             <input type="text" id="message" class="form-control" placeholder="Ask away!" style="width:80%; float: left;">
-                            <input type='submit' class='btn btn-primary' value='Send' id="send" style="width: 15%; float: left; background-color: #222; color: white;" />
+                            <input type='submit' class='btn btn-primary' value='Send' id="send" style="width: 15%; float: left; background-color: #222; color: white; border-color:white;" />
                         </div>
                     </form>
                 </div>
-            </div>
-            <div class='col-md-3' id="plots">
-                <div class="chart" style="margin: 0px;">
-                    <script type="text/javascript">
-                    new TradingView.widget({
-                        "autosize": "true",
-                        "symbol": "AAPL",
-                        "interval": "D",
-                        "timezone": "Etc/UTC",
-                        "theme": "White",
-                        "style": "3",
-                        "locale": "en",
-                        "toolbar_bg": "#f1f3f6",
-                        "enable_publishing": false,
-                        "allow_symbol_change": true,
-                        "hideideas": true
-                    });
-                    </script>
-            </div>
-            <div class="chart" style="margin: 0px;">
-                    <script type="text/javascript">
-                    new TradingView.widget({
-                        "autosize": "true",
-                        "symbol": "MSFT",
-                        "interval": "D",
-                        "timezone": "Etc/UTC",
-                        "theme": "White",
-                        "style": "3",
-                        "locale": "en",
-                        "toolbar_bg": "#f1f3f6",
-                        "enable_publishing": false,
-                        "allow_symbol_change": true,
-                        "hideideas": true
-                    });
-                    </script>
-            </div>
-            <div class="chart" style="margin: 0px;">
-                    <script type="text/javascript">
-                    new TradingView.widget({
-                        "autosize": "true",
-                        "symbol": "NVDA",
-                        "interval": "D",
-                        "timezone": "Etc/UTC",
-                        "theme": "White",
-                        "style": "3",
-                        "locale": "en",
-                        "toolbar_bg": "#f1f3f6",
-                        "enable_publishing": false,
-                        "allow_symbol_change": true,
-                        "hideideas": true
-                    });
-                    </script>
-            </div>
-            <div class="chart" style="margin: 0px;">
-                    <script type="text/javascript">
-                    new TradingView.widget({
-                        "autosize": "true",
-                        "symbol": "NFLX",
-                        "interval": "D",
-                        "timezone": "Etc/UTC",
-                        "theme": "White",
-                        "style": "3",
-                        "locale": "en",
-                        "toolbar_bg": "#f1f3f6",
-                        "enable_publishing": false,
-                        "allow_symbol_change": true,
-                        "hideideas": true
-                    });
-                    </script>
-            </div>
-            <div class="chart" style="margin: 0px;">
-                    <script type="text/javascript">
-                    new TradingView.widget({
-                        "autosize": "true",
-                        "symbol": "FB",
-                        "interval": "D",
-                        "timezone": "Etc/UTC",
-                        "theme": "White",
-                        "style": "3",
-                        "locale": "en",
-                        "toolbar_bg": "#f1f3f6",
-                        "enable_publishing": false,
-                        "allow_symbol_change": true,
-                        "hideideas": true
-                    });
-                    </script>
             </div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

@@ -10,11 +10,37 @@
     <link href="https://fonts.googleapis.com/css?family=Istok+Web" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    
 </head>
 
 <style>
 body{
     font-family: 'Istok Web', sans-serif;
+    background: #222;
+    color: #9d9d9d;
+}
+a{
+    color:#9d9d9d;
+}
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;    
 }
 </style>
 
@@ -30,8 +56,22 @@ body{
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/strategy"> Strategies</a>
-                        <li><a href="/chat"> Chat</a>
+                    <li><a href="/intro"> Introduction</a>
+                   <!-- <li><a href="/blog"> Blog</a>-->
+                    <li><a href="/chat"> Chat</a>
+                    <li class="dropdown">
+                        <a href="/strategy" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Strategies <span class="caret"></span></a>
+                        <ul class="dropdown-menu" style="background:#222;">
+                            <li><a href="/strategy" style="color:#9d9d9d;">All</a></li>
+                            <li><a style="color:#9d9d9d;" href="/strategy/reversion">Reversion to the Mean</a></li>
+                            <li><a style="color:#9d9d9d;" href="/strategy/momentum">Basic Momentum</a></li>
+                            <li><a style="color:#9d9d9d;" href="/strategy/mac">Moving Average Crossover</a></li>
+                            <li><a style="color:#9d9d9d;" href="/strategy/breakout">Channel Breakouts</a></li>
+                            <li><a style="color:#9d9d9d;" href="/strategy/monte">Monte Carlo Simulation</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/charts"> Charts</a>
+                        
                 </ul>
             </div>
         </div>
