@@ -46,7 +46,6 @@
 }
 
 #strategy{
-    overflow-y: scroll;
     height: 80%;
 }
 
@@ -80,7 +79,7 @@
 }
 
 #chartRow{
-    overflow-x: scroll;
+    overflow-x: hidden;
     overflow-y: hidden;
     max-height: 150px;
     margin-top: 55px;
