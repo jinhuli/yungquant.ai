@@ -22,7 +22,7 @@
     var numCharts = 1;
         function addChart(){
             numCharts++;
-            $('#chartCont').append("<div class='col-lg-6' id='"+numCharts.toString()+"'</div>");
+            $('#chartCont').append("<div class='col-lg-6' id='"+numCharts.toString()+"' style='height: 300px;'></div>");
             new TradingView.widget({
                     "autosize": true,
                     "symbol": "SPY",
