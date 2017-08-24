@@ -60,7 +60,9 @@ var chat = function(io) {
                 io.sockets.emit('forUser', {msg: universes, sender: "yq", id: data.id});
             }
             else{
+                
                 io.sockets.emit('forUser', {msg: "This could take up to 15 seconds...", sender: "yq", id: data.id});
+                data.message = data.message.toLowerCase();
                 var options = {
                     args: data.message,
                     pythonPath: "python3"
