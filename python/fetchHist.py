@@ -5,7 +5,7 @@ def fetchHist(symbol):
 	response = requests.get(url)
 	data = response._content.decode().split('\n')
 	data.pop(0)
-	data.pop(len(data)-1)
+	data.pop(len(data)-1) #remove headers "date open high low"
 	close = []
 	for row in data:
 		close.append(float(row.split(',')[4]))

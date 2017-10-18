@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import random
 from scipy.stats import norm
 
-
+#threading class
 class QuantThread (threading.Thread):
 	def __init__(self, symbols, strategy):
 		threading.Thread.__init__(self)

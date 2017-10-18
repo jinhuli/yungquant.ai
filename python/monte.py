@@ -13,13 +13,13 @@ import math
 
 
 def monte(symbol):
-	data = fetchHist(symbol)
+	data = fetchHist(symbol) #get last 60 days
 	data = data[0:60]
 	data = list(reversed(data))
 	numSims = 0
 	MC = {'price': -1}
 	expect = []
-
+	#hundred simulations
 	while numSims < 100:
 		numSims = numSims + 1
 		MC[str(numSims)] = monte_carlo(data, 60)
