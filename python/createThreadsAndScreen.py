@@ -44,11 +44,17 @@ def createThreadsAndScreen(prompt):
 			for row in file:
 				symbols.append(row[0])
 
-			remainder = len(symbols) % 6
-			symPerThread = int((len(symbols) - remainder)/6)
+			if universe == 'spdr':
+				numThreads = 6
+			else:
+				numThreads = 15
+
+
+			remainder = len(symbols) % numThreads
+			symPerThread = int((len(symbols) - remainder)/numThreads)
 
 			#create threads
-			for i in range(0, 6):
+			for i in range(0, numThreads):
 				if i != 5:
 					threads.append(QuantThread(symbols[symPerThread*i:symPerThread*(i+1)], strategy))
 				else:
@@ -72,7 +78,7 @@ def createThreadsAndScreen(prompt):
 		return []
 
 def rev(symbols):
-	sp200close = fetchHist('spy')
+	sp200close = fetchHist('^GSPC')
 	sp200MA = np.mean(sp200close[0:199])
 	for symbol in symbols:
 		try: 

@@ -1,14 +1,10 @@
-import requests
+import pandas_datareader.data as web
+import datetime
 
 def fetchHist(symbol):
-	url = 'http://www.google.com/finance/historical?q='+symbol+'&output=csv'
-	response = requests.get(url)
-	data = response._content.decode().split('\n')
-	data.pop(0)
-	data.pop(len(data)-1) #remove headers "date open high low"
-	close = []
-	for row in data:
-		close.append(float(row.split(',')[4]))
+	year, month, day = str(datetime.date.today()).split('-')
+	start = datetime.datetime(int(year)-1, int(month), int(day))
+	end = datetime.datetime(int(year), int(month), int(day))
+	f = web.DataReader(symbol, 'yahoo', start, end)
+	return list(f['Adj Close'])[::-1]
 
-	return close
-	
