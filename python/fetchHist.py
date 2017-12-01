@@ -7,4 +7,3 @@ def fetchHist(symbol):
 	end = datetime.datetime(int(year), int(month), int(day))
 	f = web.DataReader(symbol, 'yahoo', start, end)
 	return list(f['Adj Close'])[::-1]
-
