@@ -11,6 +11,7 @@ var strategy = require('./routes/strategy');
 var intro = require('./routes/intro');
 //var blog = require('./routes/blog');
 var charts = require('./routes/charts');
+var sorry = require('./routes/sorry');
 
 var app = express();
 
@@ -34,6 +35,7 @@ app.use('/chat', chat);
 app.use('/strategy', strategy);
 app.use('/intro', intro);
 app.use('/charts', charts);
+app.use('/sorry', sorry);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

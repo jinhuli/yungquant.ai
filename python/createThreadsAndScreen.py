@@ -32,6 +32,7 @@ sell = []
 signals = []
 close = []
 
+#main method, opens the universe file, reads symbols and starts process of screening
 def createThreadsAndScreen(prompt):
 	try:
 		strategy = prompt.split(' ')[0]
@@ -77,6 +78,8 @@ def createThreadsAndScreen(prompt):
 	except:
 		return []
 
+
+#reversion to the mean, buy when 7 day low and sp closes higher than its 200 day MA
 def rev(symbols):
 	sp200close = fetchHist('^GSPC')
 	sp200MA = np.mean(sp200close[0:199])
@@ -92,6 +95,7 @@ def rev(symbols):
 		except:
 			continue
 
+#moving average crossover
 def mac(symbols):
 	for symbol in symbols:
 		try:
@@ -105,6 +109,7 @@ def mac(symbols):
 		except:
 			continue
 
+#basic momentum
 def momentum(symbols):
 	for symbol in symbols:
 		try:
@@ -116,6 +121,7 @@ def momentum(symbols):
 		except:
 			continue
 
+#donchian channel breakouts
 def breakout(symbols):
 	for symbol in symbols:
 		try:
